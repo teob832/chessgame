@@ -1,3 +1,3 @@
 Chess
 ---
-A command line Chess program written in C++
+A command line Chess game program written in C++
