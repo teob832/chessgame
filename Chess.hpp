@@ -39,8 +39,8 @@ public:
     bool checkMate();
     static int changeTurn(int);
 private:
-    int to_int_row(const char&);
-    char to_char_row(const int&);
+    int to_int_col(const char&);
+    char to_char_col(const int&);
 };
 
 
@@ -58,11 +58,11 @@ Chess::Chess(const string& filename)
 void Chess::printBoard()
 {
     cout << endl;
-    cout << "    0 1 2 3 4 5 6 7" << endl;
+    cout << "    A B C D E F G H" << endl;
     cout << "   _________________" << endl;
     for (int i = 0; i < 8; ++i)
     {
-        cout << to_char_row(i) << "  |";
+        cout << i << "  |";
         for (int j = 0; j < 8; ++j)
         {
             if (board(i,j) == '*')
@@ -90,10 +90,10 @@ void Chess::printBoard()
 
 //Move Function
 //************************************************** 
-bool Chess::move(const int& turn, const char& row, const int& c, const char& row1, const int& c1)
+bool Chess::move(const int& turn, const char& r, const int& col, const char& r1, const int& col1)
 {
-    int r = to_int_row(row);
-    int r1 = to_int_row(row1);
+    int c = to_int_col(col);
+    int c1 = to_int_col(col1);
 
     //Give up
     if (r == -1)
@@ -205,9 +205,9 @@ int Chess::changeTurn(int turn)
 
 
 
-//To Row Function
+//To Col Function
 //************************************************** 
-int Chess::to_int_row(const char& row)
+int Chess::to_int_col(const char& row)
 {
     switch(row)
     {
@@ -251,9 +251,9 @@ int Chess::to_int_row(const char& row)
 
 
 
-//To Row Function
+//To Col Function
 //************************************************** 
-char Chess::to_char_row(const int& r)
+char Chess::to_char_col(const int& r)
 {
     switch(r)
     {

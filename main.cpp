@@ -24,8 +24,8 @@ void playChess(Chess& game)
     string player[2]= {"White", "Black"};
     int turn = 0;
     char piece;
-    char r, r1;
-    int c, c1;
+    int r, r1;
+    char c, c1;
 
     //Keep Playing until game is over -- CHECKMATE/STALEMATE
     while(game.gameOver(turn) == false)
@@ -36,7 +36,7 @@ void playChess(Chess& game)
         while (true)
         {
             cout << player[turn] << " enter move (current loc, loc to move): ";
-            cin >> r >> c >> r1 >> c1; 
+            cin >> c >> r >> c1 >> r1; 
 
             if (game.move(turn, r, c, r1, c1) == true)
                 break;

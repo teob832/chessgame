@@ -176,7 +176,6 @@ bool Board::moveExists(const int& turn)
 }
 
 
-
 //Legal Move
 //************************************************** 
 bool Board::legalMove(const int& turn, const int& r, const int& c, const int& r1, const int& c1)
